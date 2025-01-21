@@ -97,6 +97,11 @@ body {
         3. Use masthead modifier classes "--tall, --full. REMOVE or COMMENT any not in use.
     */
 
+    /* Constrain page width */
+    .container-fluid {
+        max-width: 1200px;
+    }
+
     /* Default site-wide masthead. */
     .mdgov-masthead {
         background-image: url("../img/masthead-bg-fluid-1920x250.jpg");
