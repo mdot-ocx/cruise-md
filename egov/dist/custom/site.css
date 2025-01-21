@@ -79,6 +79,12 @@ body {
     background-color: #304057;
 }
 
+.btn-link {
+    font-weight: 400;
+    color: #03AED5;
+    background-color: transparent;
+}
+
 /* Only display masthead background images on larger screens. */
 @media (min-width: 992px) {
 
