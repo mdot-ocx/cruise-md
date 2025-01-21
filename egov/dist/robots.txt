@@ -1,0 +1,4 @@
+﻿User-agent: *				# Match all bots
+#Disallow: /do/not/crawl	# Use Disallow rules to prevent crawling of certain content.
+
+# Be careful with this file! When using, place in root directory. See https://en.wikipedia.org/wiki/Robots_exclusion_standard for more information.

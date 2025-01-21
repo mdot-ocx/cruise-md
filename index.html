@@ -1,22 +1,656 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-         This is a test page
-        <script src="" async defer></script>
-    </body>
+<!-- "no-js" class required for Modernizr feature detection -->
+<html class="no-js" dir="ltr" lang="en">
+<head>
+
+    <!--
+        <title> should contain a short page name, followed by a hyphen, followed by the Agency name.
+        (e.g. Home - Maryland Agency Name)
+    -->
+    <title>Marketing Theme - Maryland.gov Enterprise Agency Template</title>
+
+    <!-- Document metadata -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- 
+    SEO: Unique description for this page. 
+    DO NOT use the same 'canned' description on more than one page. It may hurt SE rankings.
+-->
+<meta name="description" content="An official website of the State of Maryland.">
+<!-- 
+    SEO: Tell crawler bots not to archive a cached version of this page. 
+    Remove if caching is desired. This is NOT the same as 'noindex' or 'nofollow'. 
+-->
+<meta name="robot" content="noarchive">
+
+<!-- 
+    SEO: Open Graph metadata for social sharing. 
+    Tools & Resources:
+    See http://ogp.me/ for info and additional metadata options that may be relevant.
+    Facebook: https://developers.facebook.com/tools/debug/
+    Google: https://search.google.com/structured-data/testing-tool
+    Twitter: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/markup
+-->
+<meta property="og:url" content="URL_TO_THIS_PAGE">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marketing Theme">
+<meta property="og:description" content="An official website of the State of Maryland.">
+<meta property="og:image" content="/egov/dist/img/logo.png">
+<meta property="og:image:alt" content="Agency Logo">
+<meta property="og:site_name" content="Maryland.gov Enterprise Agency Template">
+
+<!-- 
+    iOS SMART APP BANNER: For sites with a mobile app to promote.
+    APP_STORE_ID: Required. Replace with your app store app ID.
+    AFFILIATE_DATA: Optional. Replace with iTunes affiliate string. Remove otherwise.
+    APP_URL: Optional. Callback app-specific context URL. Used for opening screen in app from smart banner. Remove otherwise.
+-->
+<!--<meta name="apple-itunes-app" content="app-id=APP_STORE_ID" />-->
+<!--<meta name="apple-itunes-app" content="app-id=APP_STORE_ID, affiliate-data=AFFILIATE_DATA, app-argument=APP_URL" />-->
+
+<!-- ICONS -->
+<link rel="icon" href="/egov/dist/img/favicon.ico?v=1">
+<link rel="shortcut icon" href="/egov/dist/img/favicon.ico?v=1" type="image/x-icon">
+<link rel="icon" href="/egov/dist/img/favicon.ico?v=1" type="image/x-icon">
+
+<!-- 
+    Mobile Safari ICONS: Standard Maryland flag icons. You may want to reproduce this with your agency logo.
+    See: 
+-->
+<link rel="apple-touch-icon" href="/egov/dist/img/apple-touch-icon-150x150.png">
+
+    
+<!-- Core CSS files. Do NOT modify. -->
+        <link href="/egov/dist/core/core.min.css" rel="stylesheet">
+<!-- Custom site CSS file -->
+<link href="/egov/dist/custom/site.css" rel="stylesheet">
+
+<!--
+    Scripts that must be loaded immediately. The page relies on these to be
+    loaded ASAP in order to display/function properly. All others are at the bottom.
+-->
+<script src="/egov/dist/lib/modernizr-3.6.0/modernizr-custom.js"></script>
+<script src="/egov/dist/lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/3934456c54.js" crossorigin="anonymous"></script>
+<!--
+    mdgovConfig and mdgov_widgetOptions. These globals must be declared prior to loading template
+    modules and EWF widgets.
+-->
+<script>
+
+    /* Global template JS module configuration */
+    var mdgovConfig = {
+        debug: false,
+        imageGrid: {
+            autoPlay: true
+        }
+    };
+</script>
+
+    
+
+    <!--
+        Enterprise Widget Framework (EWF) main script. Load widgets by appending their name[-version] string
+        to the "api?load=" parameter.
+    -->
+    
+        <script>
+            /*
+            * Global EWF configuration
+            * Documentation: https://egov.maryland.gov/doit/ewf/userdocs/
+            */
+            var mdgov_widgetOptions = {
+                /* https://egov.maryland.gov/doit/ewf/userdocs/widgets/analytics.aspx */
+                // REPLACE this with your own Google Analytics information or REMOVE object.
+                analytics: {
+                    // Google analytics property ID.
+                    gaPropertyId: "UA-124184430-1",
+                    // Used to uniquely identify site within GA
+                    analyticsIdentifier: "AgencyTemplate"
+                },
+                /* https://egov.maryland.gov/doit/ewf/userdocs/widgets/services.aspx */
+                services: {
+                    // filter object may contain ageny, category, keywords or all filters
+                    filter: {
+                        agency: 144  // MVA
+                    },
+                    // When filtering for services related to another, if all services have some common keywords, then all would be related.
+                    // Use relatedExcludeFilters to define a list of keywords that may be common across all services.
+                    relatedExcludeFilters: [
+                        'mva',
+                        'motor vehicle',
+                        'motor vehicle administration',
+                        'Maryland MVA',
+                        'maryland motor vehicle administration',
+                        'Online Service'
+                    ],
+                    // Debug set to true will output data to see what filters are doing.
+                    debug: false,
+                    // Show what data was used to match relationships between services when filtering by related
+                    showRelatedCompareData: true
+                },
+                /* https://egov.maryland.gov/doit/ewf/userdocs/widgets/nearyou.aspx */
+                nearyou: {
+                    // The DOM element the widget will be injected into.
+                    // Must already exist before the widget is loaded and injection is attempted.
+                    containerSelector: "#nearyou",
+                    // Map layers you want to load for your map. Use camelCase map layer IDs for the key
+                    // and the name can be anything you like.
+                    mapLayers: [
+                        { key: "stateAgencies", name: "State Agencies" },
+                        { key: "stateJobs", name: "State Jobs" },
+                        { key: "stateParks", name: "State Parks" }
+                        // Optionally pass a (icon: "//www.example.com/myIcon.png") property
+                        // to change the map layer's default icon
+                    ],
+                    mapLayersMenuStyle: 'legend',
+                    mapLayersMenuCaption: 'Legend',
+                    // Default datasets to fetch data for and plot on the map.
+                    defaultDataSets: [
+                        "stateAgencies",
+                        "stateParks",
+                        "stateJobs"
+                    ],
+                    // Toogle plotting defaultDataSets on page load
+                    plotDefaultData: true,
+                    // Show or hide the map disabled overlay
+                    showOverlay: false
+                }
+            };
+        </script>
+
+    
+        <script src="https://stage.egov.maryland.gov/doit/ewf/ewf.js" data-main="https://stage.egov.maryland.gov/doit/ewf/api?load=slidenav,header-2,translate-2"></script>
+
+</head>
+
+<body id="mdgovBodyTop">
+
+    <div class="mdgov-background"></div>
+
+    <div id="mdgovOuterWrap" class="mdgov-outerWrap">
+
+        
+
+<!-- 
+    Notifications Container. May pre-populate with notifications for server-side generation.
+    ACCESSIBILITY: Notifications should be read before anything else by assistive technologies.
+    Should be placed FIRST in the DOM so as to be read and tabbed first. NOTE: focus is placed on client notificaitons, 
+    therefore if client notifications display on page load, they will receive focus - bypassing server-generated notifications.
+-->
+<div class="mdgov-notifications m-0">
+
+    <!-- Global <noscript> warning notification -->
+    <noscript>
+    <div role="alert" class="alert alert-warning">
+        <div class="alert-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i></div>
+        <div class="alert-text">
+            <strong class="h4 alert-heading">JavaScript Required</strong>
+            <p>JavaScript is required to use content on this page. Please enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</noscript>
+    
+</div>
+
+        <!-- ACCESSIBILITY: accessMenu must be the first tabbable item in the page. -->
+        <div id="mdgov-accessMenu">
+            <a href="#mdgovMain" class="sr-only sr-only-focusable show-on-focus">Skip to Content</a>
+            <a href="http://www.maryland.gov/pages/accessibility.aspx" class="sr-only sr-only-focusable show-on-focus" target="_blank">Accessibility Information</a>
+        </div>
+
+        <!-- Enterprise Header -->
+<div id="header_container">
+    
+</div>
+
+        <div id="mdgovInnerWrap" class="mdgov-innerWrap mdgov-fluid">
+
+            <!-- Start Masthead -->
+            <header class="mdgov-masthead mdgov-masthead--marketing">
+
+                
+<div class="mdgov-navBar">
+
+    <!-- Start Search -->
+    <div class="mdgov-navBar__search">
+        <form method="GET" action="//www.maryland.gov/pages/search.aspx">
+    <!-- Site ID. See https://doit.maryland.gov/webcom/Pages/SearchCollections.aspx for valid values. -->
+    <input type="hidden" name="site" value="gpedakpy1y0">
+    <!-- Required agency name -->
+    <input type="hidden" name="name" value="This Maryland Agency">
+    <div class="mdgov-search">
+        <label for="mdgov-search__input" class="sr-only">Search</label>
+        <!-- Parameter "name" value must be "q" -->
+        <input type="text" id="mdgov-search__input" name="q" class="mdgov-search__input" value="" placeholder="Search" autocomplete="off">
+        <button type="submit" id="mdgov-search__button" class="mdgov-search__button btn"><i class="fas fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
+    </div>
+</form>
+    </div>
+
+    <!-- Start Site Navigation -->
+    <nav id="mdgovLeftNav" class="mdgov-navBar__nav" aria-labelledby="mdgovMainNavHeading">
+        <h2 class="sr-only" id="mdgovMainNavHeading">Main Navigation</h2>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/find-a-cruise.html">Find a Cruise</a>
+            </li>
+            <li>
+                <a href="/">Passenger Info</a>
+            </li>
+            <li>
+                <a href="/">Our Terminal</a>
+            </li>
+            <li>
+                <a href="/">Things to Do</a>
+            </li>
+            <li>
+                <a href="/">Travel Agents</a>
+            </li>
+            <li>
+                <a href="/">FAQs</a>
+            </li>
+            <!-- Sample active element. Apply .active class to current active page <li> programmatically. -->
+            <!-- <li class="mdgov-dropDown" data-hover="false" data-click-parent="false">
+                <a href="/splash/index.html" class="mdgov-dropDown__trigger" aria-haspopup="true">Splash Themes</a>
+                <div class="mdgov-dropDown__panel p-0" aria-hidden="true">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="/splash/angled.html">Angled Theme</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/splash/marketing.html">Marketing Theme</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/splash/grid.html">Grid Theme</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/splash/column.html">Column Theme</a>
+                        </li>
+                    </ul>
+                </div>
+            </li> -->
+            <!--
+                .mdgov-dropDown data parameters:
+                Use data-hover="true" to enable opening on hover.
+                Use data-click-parent="true" to allow drop trigger link to be navigable on click.
+            -->
+            <!-- <li class="mdgov-dropDown" data-hover="false" data-click-parent="false">
+                <a href="/fluid/index.html" class="mdgov-dropDown__trigger" aria-haspopup="true">Content Layouts</a>
+                <div class="mdgov-dropDown__panel p-0" aria-hidden="true">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/content-layouts/two-column.html">Two Column</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/content-layouts/three-column.html">Three Column</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/content-layouts/full-width.html">Full Width</a>
+                        </li>
+                        <li class="dropdown-divider" aria-hidden="true"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/content-layouts/text-width.html">Text Width</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mdgov-dropDown" data-hover="false" data-click-parent="false">
+                <a href="/widgets/header.html" class="mdgov-dropDown__trigger" aria-haspopup="true">Enterprise Widgets</a>
+                <div class="mdgov-dropDown__panel p-0" aria-hidden="true">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/widgets/header.html">Header</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/widgets/nearyou.html">Near You</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/widgets/services.html">Services</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mdgov-dropDown" data-hover="false" data-click-parent="false">
+                <a href="/resources/notifications-api.html" class="mdgov-dropDown__trigger" aria-haspopup="true">Template Resources</a>
+                <div class="mdgov-dropDown__panel p-0" aria-hidden="true">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/resources/notifications-api.html">Notifications API</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/egov/dist/docs/Enterprise-Agency-Template-Documentation.zip">Implementation Documentation</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+        </ul> -->
+    </nav>
+
+</div>
+
+<div class="mdgov-hero mdgov-hero--shaded">
+    <a href="/" class="mdgov-hero__brand">
+        <div class="mdgov-hero__logo">
+            
+<img class="mdgov-hero__brand__logo" src="/egov/dist/img/logo.png" alt="Go To Home Page">
+        </div>
+        <div class="mdgov-hero__heading">
+            <h1 id="mdgovAgency" class="mdgov-agency">
+                <span>MARYLAND PORT ADMINISTRATION</span>
+                <span class="mdgov-agency__name">CRUISE MARYLAND</span>
+            </h1>
+        </div>
+    </a>
+    <div class="mdgov-social">
+        <!-- [ ACCESSIBILITY: Tooltip-enabled elements must include aria-label values as well for screen readers ] -->
+        <a href="https://www.facebook.com/" target="_blank" class="mdgov-social__icon" data-toggle="tooltip" data-placement="top" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+        <a href="https://www.twitter.com/" target="_blank" class="mdgov-social__icon" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter-square" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" class="mdgov-social__icon" data-toggle="tooltip" data-placement="top" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <!-- [ More social media located in the bottom "mdgovMoreSocial" modal dialog. ] -->
+        <button class="mdgov-social__icon" type="button" data-toggle="modal" data-target="#mdgovMoreSocial" aria-label="More Social Media"><span data-toggle="tooltip" data-placement="top" title="More Social Media"><i class="icon-ellipsis-h" aria-hidden="true"></i></span></button>
+    </div>
+</div> 
+
+                
+    <!-- Splash Content -->
+    <div class="mdgov-marketingIntro" data-aos="fade-up">
+        <div class="mdgov-marketingIntro__content">
+            <h2 class="mdgov-marketingIntro__heading">
+                Welcome to Cruise Maryland:<br>Your Gateway to Adventure!
+            </h2>
+            <!-- <nav class="mdgov-marketingIntro__nav">
+                <a href="#" data-aos="fade-up" data-aos-delay="400">Action Item One</a>
+                <a href="#" data-aos="fade-up" data-aos-delay="600">Action Item Two</a>
+            </nav> -->
+        </div>
+    </div>
+
+    <!-- .mdgov-bodynotifications may be defined in markup if the auto-injected "main" container is not appropriate. -->
+    <div class="mdgov-bodynotifications m-0"></div>
+            </header>
+
+            <!-- Begin Body Content -->
+
+            
+<!-- SEMANTICS: <main> tag represents primary/main content of page. -->
+<main id="mdgovMain" class="mdgov-main">
+
+    <!-- Latest News -->
+    <section class="bg-white py-lg-5">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+            <div class="col-sm-12 my-lg-5">
+                <h1 class="text-center text-primary">Discover the Thrill of Cruising from Baltimore!</h1>
+                <p>
+                    At Cruise Maryland, we invite you to join us on an unforgettable journey from our vibrant cruise terminal in the heart of Baltimore. As a premier cruise port, we offer travelers, cruise lines and travel agents the services and experiences they deserve and have come to expect! Join us in exploring all that Cruise Maryland has to offer and discover why we are the top choice for your next adventure!
+                </p>
+            </div>
+
+            <div class="card-group mt-lg-5">
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-title text-primary">Cruise Line Partners</h3>
+                    <p class="card-text">At Cruise Maryland, we proudly partner with premier cruise lines offering a diverse array of exciting itineraries. Whether you’re of sun-soaked beaches, vibrant cultures, or breathtaking landscapes, Carnival and Royal Caribbean cruise lines have something for everyone!</p>
+                    <ul>
+                        <li><a href="https://www.carnival.com/cruise-ships/carnival-pride" target="_blank">Carnival Cruise Lines' Pride</a></li>
+                        <li><a href="https://www.royalcaribbean.com/cruise-ships/vision-of-the-seas" target="_blank">Royal Caribbean Vision of the Seas</a></li>
+                   </ul>
+                   <p class="text-center"><a href="#" class="btn btn-primary mt-3">Learn More</a></p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" src="https://placehold.co/700x450" alt="Card image cap">
+                </div>
+              </div>
+
+              <div class="card-group">
+                <div class="card">
+                    <img class="card-img-top" src="https://placehold.co/700x550" alt="Card image cap">
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title text-primary">Book Your Cruise Today!</h3>
+                      <p class="card-text">Cruise Maryland is your gateway to unforgettable journeys. Start in Baltimore, where you can enjoy the city's vibrant attractions before setting sail to stunning destinations. Discover the vibrant cultures of Puerto Rico and the Caribbean or take a scenic cruise along the East Coast. A world of incredible adventures awaits you, starting right here in beautiful Baltimore. Come for the cruise, stay for the experience.</p>
+                      <ul style="column-count: 2;">
+                        <li>Eastern & Southern Caribbean</li>
+                        <li>Bahamas</li>
+                        <li>Bermuda</li>
+                        <li>Panama Canal</li>
+                        <li>Canada</li>
+                        <li>New England</li>
+                        <li>Greenland</li>
+                     </ul>
+                     <p class="text-center"><a href="#" class="btn btn-primary mt-3">Learn More</a></p>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-title text-primary">What You Need To Know</h3>
+                    <p class="card-text">At Cruise Maryland, we are dedicated to providing travelers with all the information they need for a seamless cruise experience. Below, you will find important details about embarking on your journey, including check-in procedures, parking options, travel tips, and more.</p>
+
+                   <p class="text-center"><a href="#" class="btn btn-primary mt-3">Learn More</a></p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" style="object-fit: cover;" src="https://placehold.co/700x450" alt="Card image cap">
+                </div>
+              </div>
+
+              <div class="card-group mb-lg-5">
+                <div class="card">
+                    <img class="card-img-top" src="https://placehold.co/700x450" alt="Card image cap">
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title text-primary">Things To Do In Baltimore</h3>
+                      <p class="card-text">In Baltimore, diversity is not just celebrated—it's woven into the fabric of our city. From the rich cultural heritage to the warm hospitality of our residents, Baltimore welcomes visitors from every corner of the globe with open arms.
+                        Embark on a journey where every moment presents an opportunity to explore, savor, and create unforgettable memories that last long after your cruise has set sail.
+                        </p>
+                     <p class="text-center"><a href="#" class="btn btn-primary mt-3">Learn More</a></p>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- More -->
+    <section class="bg-light">
+
+        <div class="container-fluid py-3 py-lg-8">
+
+            <div class="card-deck">
+                <div class="card">
+                  <img class="card-img-top" src="https://placehold.co/700x500" alt="Card image cap">
+                  <div class="card-body">
+                    <h3 class="card-title">Our Terminal</h3>
+                    <p class="card-text">The Cruise Maryland terminal features modern facilities for a smooth passenger experience. On-site parking is available, including spaces for travelers with disabilities. Taxis, shuttle buses, and limousines have convenient drop-off points at the terminal, ensuring quick check-in and boarding for all guests.</p>
+                    <p class="text-center"><a href="#" class="btn btn-primary mt-3">Learn More</a></p>
+                  </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://placehold.co/700x500" alt="Card image cap">
+                    <div class="card-body">
+                    <h3 class="card-title">For Cruise Operators</h3>
+                    <p class="card-text">Discover exceptional services tailored to your every need at Cruise Maryland, where your guests' travel experiences are our top priority. Embrace the promising opportunities that arise from a dynamic and cooperative partnership. Welcome!</p>
+                    <p class="text-center"><a href="#" class="btn btn-primary mt-3">Learn More</a></p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-title">Follow Us</h3>
+                    <p class="card-text">(Facebook embed)</p>
+                  </div>
+                </div>
+              </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+            <!-- End Body Content -->
+
+        </div>
+
+        <footer id="mdgovFooter" class="mdgov-footer">
+
+    <h1 class="mdgov-headingBar bg-secondary">Information</h1>
+<div class="row no-gutters">
+    <div class="col-sm-6 col-xl-3 bg-darkgray text-white mdgov-governorPanel">
+        <a href="http://governor.maryland.gov/announcement.html" target="_blank">
+            <img src="https://www.maryland.gov/publishingimages/gov/govLtGov-v2.png" alt="Maryland Governor and Leutenant Governor">
+        </a>
+    </div>
+    <div class="col-sm-12 col-xl-6 bg-lightyellow p-3 p-lg-4 order-sm-3">
+        <div class="mdgov-csp">
+            <div class="row">
+                <div class="col-md-3 mdgov-csp__col1">
+                    <a href="http://www.maryland.gov/pages/customerservice.aspx" target="_blank">
+                        <img src="/egov/dist/img/changingMD-400x400.png" alt="Customer Service Promise">
+                    </a>
+                </div>
+                <div class="col-md-9 mdgov-csp__col2">
+                    <h2 class="h3">Customer Service Promise</h2>
+                    <p><em>The State of Maryland pledges to provide constituents, businesses, customers, and stakeholders with friendly and courteous, timely and responsive, accurate and consistent, accessible and convenient, and truthful and transparent services.</em></p>
+                    <a href="http://www.maryland.gov/pages/customerservice.aspx" target="_blank" class="btn btn-block btn-primary">Take Our Survey</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3 bg-white p-3 p-lg-4 order-sm-2 order-xl-3">
+        <h2 class="h3">Human Trafficking <strong>GET HELP</strong></h2>
+        <p>National Human Trafficking Hotline - 24/7 Confidential</p>
+        <a class="btn btn-block btn-primary" href="tel:1-888-373-7888"><i class="fas fa-phone mr-2" aria-hidden="true"></i>1-888-373-7888</a>
+        <a class="btn btn-block btn-primary" href="tel:233733"><i class="fas fa-mobile mr-2" aria-hidden="true"></i>233733</a>
+        <a href="http://goccp.maryland.gov/victims/rights-resources/human-trafficking/" target="_blank" class="btn btn-block btn-link text-center">More Information <span class="sr-only"> on human trafficking in Maryland</span></a>
+    </div>
+</div>
+
+    <div id="mdgovFooterMiddle" class="mdgov-footer__middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4">
+                    <p id="mdgov-footer__copyright">&copy; Copyright <a href="http://www.maryland.gov/" target="_blank">Maryland.gov</a>. All rights reserved.</p>
+                </div>
+                <div class="col-xl-8">
+                    <ul class="mdgov-footer__nav">
+                        <li><a href="#" target="_blank">Contact Us</a></li>
+                        <li><a href="#" target="_blank">Survey</a></li>
+                        <li><a href="http://www.maryland.gov/pages/privacy_security.aspx" target="_blank">Privacy &amp; Security</a></li>
+                        <li><a href="http://www.maryland.gov/pages/accessibility.aspx" target="_blank">Accessibility</a></li>
+                        <li><a href="http://www.maryland.gov/pages/online_services.aspx" target="_blank">More Online Services</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mdgovFooterBottom" class="mdgov-footer__bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="mdgovFooterContacts" class="mdgov-footer__contacts">
+                    100 Community Place, Crownsville, MD 21032 <br>
+                    300-301 West Preston Street, Baltimore MD 21201 <br>
+                    410-697-9700 or Dial 7-1-1 to place a call through Maryland Relay
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+    </div>
+
+    
+
+<!-- More social media dialog -->
+<div class="modal fade" id="mdgovMoreSocial" tabindex="-1" role="dialog" aria-labelledby="mdgovMoreSocialTitle">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="h4 modal-title" id="mdgovMoreSocialTitle">Our Social Media Channels</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="icon-close" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>We're available on the following channels.</p>
+
+                <!-- See: https://fontawesome.com/icons?d=gallery&s=brands,solid for available icon classes. -->
+                <div class="list-group mdgov-iconList">
+                    <a href="https://plus.google.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-google-plus-square" aria-hidden="true"></i> Google Plus</a>
+                    <a href="https://www.youtube.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-youtube-square" aria-hidden="true"></i> YouTube</a>
+                    <a href="#" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-vimeo-square" aria-hidden="true"></i> Vimeo</a>
+                    <a href="#" target="_blank" class="list-group-item list-group-item-action"><i class="fas fa-video" aria-hidden="true"></i> Video</a>
+                    <a href="https://www.flickr.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-flickr" aria-hidden="true"></i> Flickr</a>
+                    <a href="https://www.pinterest.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-pinterest-square" aria-hidden="true"></i> Pinterest</a>
+                    <a href="https://www.snapchat.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-snapchat-square" aria-hidden="true"></i> Snapchat</a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                    <a href="https://www.blogger.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-blogger" aria-hidden="true"></i> Blogger</a>
+                    <a href="https://del.icio.us/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-delicious" aria-hidden="true"></i> Delicious</a>
+                    <a href="https://issuu.com/" target="_blank" class="list-group-item list-group-item-action"><i class="icon-issuu" aria-hidden="true"></i> Issuu</a>
+                    <a href="#" target="_blank" class="list-group-item list-group-item-action"><i class="fas fa-rss-square" aria-hidden="true"></i> RSS Feed</a>
+                    <a href="https://slack.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-slack" aria-hidden="true"></i> Slack</a>
+                    <a href="https://www.reddit.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-reddit" aria-hidden="true"></i> Reddit</a>
+                    <a href="https://soundcloud.com/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-soundcloud" aria-hidden="true"></i> SoundCloud</a>
+                    <a href="#" target="_blank" class="list-group-item list-group-item-action"><i class="fas fa-podcast" aria-hidden="true"></i> Podcast</a>
+                    <a href="#" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-itunes" aria-hidden="true"></i> iTunes</a>
+                    <a href="#" target="_blank" class="list-group-item list-group-item-action"><i class="fas fa-newspaper" aria-hidden="true"></i> eNews</a>
+                    <a href="https://public.govdelivery.com/" target="_blank" class="list-group-item list-group-item-action"><i class="icon-govdelivery" aria-hidden="true"></i> GovDelivery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    Loading scripts just before </body> ensures HTML content is downloaded and parsed first.
+    This also means the site can begin to display prior to loading all JS, which helps display performance.
+-->
+<script src="/egov/dist/lib/bootstrap-4.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="/egov/dist/core/core.min.js"></script>
+<script src="/egov/dist/custom/site.js"></script>
+    
+
+    <a href="#mdgovBodyTop" class="mdgov-scrollArrow mdgov-scrollArrow--fixed animated slideInUp" tabindex="-1" aria-hidden="true">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 200 33" enable-background="new 0 0 200 33" xml:space="preserve">
+    <path class="downButton" fill="#C8202D" d="M0,32.969c0,0,18.125,0.131,18.125-15.869S36,1.531,36,1.531h133.75c0,0,13.75-1.45,13.75,15.519 S200,32.969,200,32.969H0z"></path>
+    </svg>
+    <i class="icon-downarrow downArrow" aria-hidden="true"></i>
+</a>
+
+    <script src="/egov/dist/lib/backstretch-2.1.17/jquery.backstretch.min.js"></script>
+    <script>
+        // https://www.jquery-backstretch.com/
+        // https://github.com/jquery-backstretch/jquery-backstretch
+        $(document).ready(function () {
+            $("header").backstretch([
+                "/egov/dist/img/masthead-bg-marketing-1920x1020-1.jpg",
+                "/egov/dist/img/masthead-bg-marketing-1920x1020-2.jpg",
+                "/egov/dist/img/masthead-bg-marketing-1920x1020-3.jpg"
+            ], { duration: 4000, fade: 750, fadeFirst: false });
+        });
+    </script>
+</body>
+
 </html>

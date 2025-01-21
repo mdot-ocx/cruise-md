@@ -1,0 +1,167 @@
+﻿:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #F09021;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --black: #000;
+    --primary: #03AED5;
+    --secondary: #304057;
+    --success: #090;
+    --info: #0483d8;
+    --warning: #F09021;
+    --danger: red;
+    --light: #f8f9fa;
+    --dark: #000;
+    --white: #fff;
+    --highlight: #FFC838;
+    --lightyellow: #ffdfa2;
+    --gray: #e9ecef;
+    --darkgray: #4d4d4d;
+    --maryland-primary: #C8122C;
+    --maryland-secondary: #1E1E1E;
+    --maryland-highlight: #FFC838;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: "Montserrat", sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.text-primary {
+    color: #03AED5 !important;
+}
+
+.text-secondary {
+    color: #304057 !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #03AED5;
+    border-color: #03AED5;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #304057;
+    border-color: #304057;
+}
+
+a {
+    color: #03AED5;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+    color: #304057;
+}
+
+body {
+    background-color: #304057;
+}
+
+.mdgov-footer__middle, .mdgov-footer__bottom {
+    text-align: center;
+    clear: both;
+    background-color: #304057;
+}
+
+/* Only display masthead background images on larger screens. */
+@media (min-width: 992px) {
+
+    /*
+        1. Edit the .mdgov-masthead rule's background-image to your own default site-wide image.
+        2. Use the .mdgov-fixed .mdgov-mastead rule to override your default if using a combination of fluid and fixed width layouts.
+        3. Use masthead modifier classes "--tall, --full. REMOVE or COMMENT any not in use.
+    */
+
+    /* Default site-wide masthead. */
+    .mdgov-masthead {
+        background-image: url("../img/masthead-bg-fluid-1920x250.jpg");
+    }
+
+    /* Default site-wide fixed layout masthead. */
+    .mdgov-fixed .mdgov-masthead {
+        background-image: url("../img/masthead-bg-fixed-1200x250.jpg");
+    }
+
+    /* Tall fluid-width masthead. */ 
+    .mdgov-masthead.mdgov-masthead--tall {
+        background-image: url("../img/masthead-bg-tall-fluid-1920x500.jpg"); 
+    }
+
+    /* Tall fixed-width masthead. */
+    .mdgov-fixed .mdgov-masthead.mdgov-masthead--tall {
+        background-image: url("../img/masthead-bg-tall-fixed-1200x500.jpg");
+    }
+
+    /* Full-height, fluid-width masthead. */
+    .mdgov-masthead.mdgov-masthead--full {
+        background-image: url("../img/masthead-bg-full-fluid-1920x1020.jpg");
+        overflow: hidden;
+    }
+
+   /* 
+        Full-height, marketing masthead. Background set to none in order to let
+        the background image slideshow define images. If not using slideshow, specify your marketing
+        background image here.
+    */
+    .mdgov-masthead.mdgov-masthead--marketing {
+        background-image: none;
+    }
+
+    /* 
+        For displaying angled card background effect.
+        Note that background color is specified as the primary brand in the core CSS already.
+    */
+    .mdgov-masthead.mdgov-masthead--full:before {
+        content: "";
+        backface-visibility: hidden;
+        transform: skew(0deg,-3deg);
+        height: 50%;
+        width: 100vw;
+        position: absolute;
+        z-index: 0;
+        transform-origin: bottom left;
+        left: 0;
+        bottom: -110px;
+    }
+
+    /* Full-height, fixed-width masthead. */
+    .mdgov-fixed .mdgov-masthead.mdgov-masthead--full {
+        background-image: url("../img/masthead-bg-full-fixed-1200x1020.jpg");
+        background-size: auto;
+        background-position: top center;
+    }
+
+    .mdgov-masthead--angled {
+        background-image: url('../img/masthead-bg-angled.jpg');
+    }
+
+    /* Full-screen background example. 
+    .mdgov-outerWrap {
+        background-color: transparent;
+    }
+    body {
+        background-image: url(../img/masthead-bg-full-fluid-1920x1020.jpg);
+    }
+    */
+}
+
+.mdgov-marketingIntro__heading {
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
