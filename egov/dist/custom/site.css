@@ -97,6 +97,10 @@ body {
         3. Use masthead modifier classes "--tall, --full. REMOVE or COMMENT any not in use.
     */
 
+    .mdgov-navBar {
+        background-color: rgba(48, 64, 87, 0.5);
+    }
+
     /* Constrain page width */
     .container-fluid {
         max-width: 1200px;
