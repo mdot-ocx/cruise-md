@@ -81,11 +81,11 @@ body {
 
 .btn-link {
     font-weight: 600;
-    color: #03AED5;
+    color: #03aed5;
 }
 
 .btn-link:hover {
-    color: #304057;
+    color: rgb(48, 64, 87);
 }
 
 /* Only display masthead background images on larger screens. */
@@ -99,6 +99,9 @@ body {
 
     .mdgov-navBar {
         background-color: rgba(48, 64, 87, 0.5);
+    }
+    .mdgov-hero--shaded {
+        background-color: rgba(3, 174, 213, 0.35);
     }
 
     /* Constrain page width */
