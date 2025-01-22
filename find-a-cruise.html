@@ -317,7 +317,7 @@
 
                 <h1 class="text-primary">Maryland Cruise Terminal Schedule</h1>
 
-                <div class="divTable">
+                <div class="divTable" id="cruiseTable">
                     <div class="divTableHeading">
                     <div class="divTableRow">
                     <div class="divTableHead">
@@ -1928,7 +1928,7 @@
 }
 
 .divTableRow:nth-child(even) {
-    background-color: rgba(48, 64, 87, 0.2);
+    background-color: rgba(3, 174, 213, 0.2);
 }
                  </style>
 
@@ -1946,7 +1946,7 @@
 
     function sortDate() {
       var table, rows, switching, i, x, y, shouldSwitch;
-      table = document.getElementById("myTable");
+      table = document.getElementById("cruiseTable");
       switching = true;
       /*Make a loop that will continue until
       no switching has been done:*/
@@ -1981,7 +1981,7 @@
     
     function sortVessel() {
       var table, rows, switching, i, x, y, shouldSwitch;
-      table = document.getElementById("myTable");
+      table = document.getElementById("cruiseTable");
       switching = true;
       /*Make a loop that will continue until
       no switching has been done:*/
@@ -2016,7 +2016,7 @@
     
     function sortCruiseline() {
       var table, rows, switching, i, x, y, shouldSwitch;
-      table = document.getElementById("myTable");
+      table = document.getElementById("cruiseTable");
       switching = true;
       /*Make a loop that will continue until
       no switching has been done:*/
@@ -2051,7 +2051,7 @@
     
     function sortDestination() {
       var table, rows, switching, i, x, y, shouldSwitch;
-      table = document.getElementById("myTable");
+      table = document.getElementById("cruiseTable");
       switching = true;
       /*Make a loop that will continue until
       no switching has been done:*/
