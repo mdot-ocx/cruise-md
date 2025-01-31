@@ -92,6 +92,12 @@ body {
     background-color: #03aed5;
 }
 
+@media (max-width: 991.98px) {
+    .mdgov-navBar__nav {
+        background-color: #03aed5;
+    }
+}
+
 /* Only display masthead background images on larger screens. */
 @media (min-width: 992px) {
 
