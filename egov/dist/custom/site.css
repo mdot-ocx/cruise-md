@@ -88,6 +88,10 @@ body {
     color: rgb(48, 64, 87);
 }
 
+.mdgov-hero {
+    background-color: #03aed5;
+}
+
 /* Only display masthead background images on larger screens. */
 @media (min-width: 992px) {
 
