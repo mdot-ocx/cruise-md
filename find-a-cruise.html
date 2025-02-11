@@ -2551,6 +2551,7 @@
 .divTableHeading, #indextable th {
 	background-color: #EEE;
 	display: table-header-group;
+    font-weight: bold;
 }
 .divTableCell, .divTableHead, #indextable th, #indextable td {
 	border: 1px solid #999999;
@@ -2559,11 +2560,6 @@
     border-left: none;
     border-right: none;
 }
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-	font-weight: bold;
-}
 .divTableBody {
 	display: table-row-group;
 }
@@ -2571,7 +2567,7 @@
     margin-bottom: 0;
 }
 
-.divTableRow:nth-child(even) {
+.divTableRow:nth-child(even), #indextable tr:nth-child(even) {
     background-color: rgba(3, 174, 213, 0.1);
 }
                  </style>
